@@ -1,0 +1,220 @@
+name: Autograding Tests
+'on':
+- push
+- repository_dispatch
+permissions:
+  checks: write
+  actions: read
+  contents: read
+jobs:
+  run-autograding-tests:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-classroom[bot]'
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: APP-0
+      id: app-0
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: APP-0
+        setup-command: npm install
+        command: npm run test-app-0
+        timeout: 2
+        max-score: 5
+    - name: APP-1
+      id: app-1
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: APP-1
+        setup-command: npm install
+        command: npm run test-app-1
+        timeout: 2
+        max-score: 5
+    - name: APP-2
+      id: app-2
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: APP-2
+        setup-command: npm install
+        command: npm run test-app-2
+        timeout: 2
+        max-score: 5
+    - name: APP-3
+      id: app-3
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: APP-3
+        setup-command: npm install
+        command: npm run test-app-3
+        timeout: 2
+        max-score: 5
+    - name: APP-4
+      id: app-4
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: APP-4
+        setup-command: npm install
+        command: npm run test-app-4
+        timeout: 2
+        max-score: 5
+    - name: APP-5
+      id: app-5
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: APP-5
+        setup-command: npm install
+        command: npm run test-app-5
+        timeout: 2
+        max-score: 5
+    - name: APP-6
+      id: app-6
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: APP-6
+        setup-command: npm install
+        command: npm run test-app-6
+        timeout: 2
+        max-score: 5
+    - name: APP-7
+      id: app-7
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: APP-7
+        setup-command: npm install
+        command: npm run test-app-7
+        timeout: 2
+        max-score: 5
+    - name: APP-8
+      id: app-8
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: APP-8
+        setup-command: npm install
+        command: npm run test-app-8
+        timeout: 2
+        max-score: 5
+    - name: APP-9
+      id: app-9
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: APP-9
+        setup-command: npm install
+        command: npm run test-app-9
+        timeout: 2
+        max-score: 5
+    - name: APP-10
+      id: app-10
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: APP-10
+        setup-command: npm install
+        command: npm run test-app-10
+        timeout: 2
+        max-score: 5
+    - name: APP-11
+      id: app-11
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: APP-11
+        setup-command: npm install
+        command: npm run test-app-11
+        timeout: 2
+        max-score: 5
+    - name: APP-12
+      id: app-12
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: APP-12
+        setup-command: npm install
+        command: npm run test-app-12
+        timeout: 2
+        max-score: 5
+    - name: APP-13
+      id: app-13
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: APP-13
+        setup-command: npm install
+        command: npm run test-app-13
+        timeout: 2
+        max-score: 5
+    - name: APP-14
+      id: app-14
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: APP-14
+        setup-command: npm install
+        command: npm run test-app-14
+        timeout: 2
+        max-score: 5
+    - name: APP-15
+      id: app-15
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: APP-15
+        setup-command: npm install
+        command: npm run test-app-15
+        timeout: 2
+        max-score: 5
+    - name: APP-16
+      id: app-16
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: APP-16
+        setup-command: npm install
+        command: npm run test-app-16
+        timeout: 2
+        max-score: 5
+    - name: APP-17
+      id: app-17
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: APP-17
+        setup-command: npm install
+        command: npm run test-app-17
+        timeout: 2
+        max-score: 5
+    - name: APP-18
+      id: app-18
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: APP-18
+        setup-command: npm install
+        command: npm run test-app-18
+        timeout: 2
+        max-score: 5
+    - name: APP-19
+      id: app-19
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: APP-19
+        setup-command: npm install
+        command: npm run test-app-19
+        timeout: 2
+        max-score: 5
+    - name: Autograding Reporter
+      uses: classroom-resources/autograding-grading-reporter@v1
+      env:
+        APP-0_RESULTS: "${{steps.app-0.outputs.result}}"
+        APP-1_RESULTS: "${{steps.app-1.outputs.result}}"
+        APP-2_RESULTS: "${{steps.app-2.outputs.result}}"
+        APP-3_RESULTS: "${{steps.app-3.outputs.result}}"
+        APP-4_RESULTS: "${{steps.app-4.outputs.result}}"
+        APP-5_RESULTS: "${{steps.app-5.outputs.result}}"
+        APP-6_RESULTS: "${{steps.app-6.outputs.result}}"
+        APP-7_RESULTS: "${{steps.app-7.outputs.result}}"
+        APP-8_RESULTS: "${{steps.app-8.outputs.result}}"
+        APP-9_RESULTS: "${{steps.app-9.outputs.result}}"
+        APP-10_RESULTS: "${{steps.app-10.outputs.result}}"
+        APP-11_RESULTS: "${{steps.app-11.outputs.result}}"
+        APP-12_RESULTS: "${{steps.app-12.outputs.result}}"
+        APP-13_RESULTS: "${{steps.app-13.outputs.result}}"
+        APP-14_RESULTS: "${{steps.app-14.outputs.result}}"
+        APP-15_RESULTS: "${{steps.app-15.outputs.result}}"
+        APP-16_RESULTS: "${{steps.app-16.outputs.result}}"
+        APP-17_RESULTS: "${{steps.app-17.outputs.result}}"
+        APP-18_RESULTS: "${{steps.app-18.outputs.result}}"
+        APP-19_RESULTS: "${{steps.app-19.outputs.result}}"
+      with:
+        runners: app-0,app-1,app-2,app-3,app-4,app-5,app-6,app-7,app-8,app-9,app-10,app-11,app-12,app-13,app-14,app-15,app-16,app-17,app-18,app-19
