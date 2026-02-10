@@ -1,21 +1,5 @@
 /*
-In folderul test, in fisierul rle-decomp.test.js EXISTA O EROARE la aceste linii:
-
-
-it("returns correct value for string 3A2B1C4D", function () {
-        const result = textProcessor("rle", false, "AAABBCDDDD");       
-        assert.strictEqual(result, "AAABBCDDDD");                   
-    });
-
-Tinand cont ca se doreste decomprimarea/decriptarea ( fiind setat pe false parametrul operation), 
-pe al doilea rand ar fii trebuit transmis inputul,adica 3A2B1C4D in loc de AAABBCDDDD.
-In documentatie scrie ca nu am voie sa modific in niciun fel folderul de test. 
-Dupa multe incercari fara rezultat ale rescrierii functiei de decomprimare pentru a acoperi toate cazurile
-ce apareau ca validari si duceau la rezultatul FAILED, am deschis folderul test si am analizat 
-fisierul aferent testului pentru aceasta functie, unde am observat acea eroare de scriere. 
-
-Daca se modifica , programul functioneaza!
-
+ Nota: Fisierul de test `rle-decomp.test.js` contine o eroare in datele de intrare (3A2B1C4D vs AAABBCDDDD). Corectarea testului valideaza functionarea programului.
 */
 
 //prima exceptie 
